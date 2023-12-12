@@ -1,0 +1,33 @@
+<!-- players/templates/players/players_template.html -->
+
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>Players Comparison</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Team</th>
+        <th>Position</th>
+        <th>Age</th>
+        <th>xA</th>
+        <th>xG</th>
+        <!-- Add other columns as needed -->
+      </tr>
+    </thead>
+    <tbody>
+      {% for player in players %}
+        <tr>
+          <td>{{ player.name }}</td>
+          <td>{{ player.team }}</td>
+          <td>{{ player.position }}</td>
+          <td>{{ player.age }}</td>
+          <td>{{ player.xa }}</td>
+          <td>{{ player.xg }}</td>
+          <!-- Render other fields -->
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}

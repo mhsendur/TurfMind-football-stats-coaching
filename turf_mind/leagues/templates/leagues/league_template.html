@@ -1,0 +1,29 @@
+<!-- leagues/templates/leagues/league_template.html -->
+
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>League Table</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>Position</th>
+        <th>Club</th>
+        <th>Total xG</th>
+        <th>Total xPTS</th>
+        <!-- Add other columns as needed -->
+      </tr>
+    </thead>
+    <tbody>
+      {% for club in clubs %}
+        <tr>
+          <td>{{ forloop.counter }}</td>
+          <td>{{ club.name }}</td>
+          <td>{{ club.total_xg }}</td>
+          <td>{{ club.total_xpts }}</td>
+          <!-- Render other fields -->
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}
