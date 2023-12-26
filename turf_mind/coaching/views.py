@@ -1,3 +1,4 @@
 from django.shortcuts import render
 
-# Create your views here.
+def coaching(request):
+    return render(request, 'coaching/index.html')

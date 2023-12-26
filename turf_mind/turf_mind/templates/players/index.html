@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <title>Players | TurfMind</title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+<body>
+  <header>
+    <nav>
+        <div class="logo">
+            <a href="{% url 'home_index' %}">
+                <img src="{% static 'images/logo.png' %}" alt="TurfMind Logo">
+                <span class="logo-text">TurfMind</span>
+            </a>
+        </div>
+      <ul>
+        <li><a href="{% url 'home_index' %}">Home</a></li>
+        <li class="dropdown">
+            <a href="#">Leagues</a>
+            <div class="dropdown-content">
+                <a href="{% url 'league-page' 'EPL' '2022' %}">EPL</a>
+                <a href="{% url 'league-page' 'La_liga' '2022' %}">La Liga</a>
+                <a href="{% url 'league-page' 'Bundesliga' '2022' %}">Bundesliga</a>
+                <a href="{% url 'league-page' 'Serie_A' '2022' %}">Serie A</a>
+                <a href="{% url 'league-page' 'Ligue_1' '2022' %}">Ligue 1</a>
+            </div>
+        </li>
+        <li><a href="#">Players</a></li>
+        <li><a href="{% url 'coaching' %}">Coaching</a></li>
+        <li><a href="{% url 'about_us' %}">About Us</a></li>
+    </ul>
+    </nav>
+</header>
+  
+  <main>
+    <!-- Players Analysis Header -->
+    <div class="players-header">
+      <h1>Player Analysis</h1>
+      <div class="filters">
+        <!-- For Season -->
+        <label for="season-select">Season:</label>
+        <select id="season-select" name="season" aria-label="Select Season">
+        </select>
+
+        <!-- For League -->
+        <label for="league-select">League:</label>
+        <select id="league-select" name="league" aria-label="Select League">
+        </select>
+
+        <!-- For Club -->
+        <label for="club-select">Club:</label>
+        <select id="club-select" name="club" aria-label="Select Club">
+        </select>
+
+        <!-- For Position -->
+        <label for="position-select">Position:</label>
+        <select id="position-select" name="position" aria-label="Select Position">
+        </select>
+
+      </div>
+    </div>
+    
+    <!-- Dynamic Players Table -->
+    <table id="players-table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Team</th>
+                <th>Position</th>
+                <th>Age</th>
+                <th>xA</th>
+                <th>xG</th>
+                <th>Assists</th>
+                <th>Goals</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Table rows will be populated by script.js -->
+        </tbody>
+    </table>
+
+    <!-- Definition of Metrics, similar to the leagues page -->
+    <section id="metrics-definition">
+      <!-- Metrics definitions content -->
+    </section>
+
+    <!-- Last 5 Years Best -->
+    <section id="last-years-best">
+      <!-- Content for last 5 years best -->
+    </section>
+    
+  </main>
+  <footer>
+    <ul>
+        <li><a href="{% url 'home_index' %}">Home</a></li>
+        <!-- Dropdown for Leagues in the footer -->
+        <li class="dropdown">
+            <a href="javascript:void(0)">Leagues</a>
+            <div class="dropdown-content">
+                <a href="{% url 'league-page' 'EPL' '2022' %}">EPL</a>
+                <a href="{% url 'league-page' 'La_liga' '2022' %}">La Liga</a>
+                <a href="{% url 'league-page' 'Bundesliga' '2022' %}">Bundesliga</a>
+                <a href="{% url 'league-page' 'Serie_A' '2022' %}">Serie A</a>
+                <a href="{% url 'league-page' 'Ligue_1' '2022' %}">Ligue 1</a>
+            </div>
+        </li>
+        <li><a href="#">Players</a></li>
+        <li><a href="{% url 'coaching' %}">Coaching</a></li>
+        <li><a href="{% url 'about_us' %}">About Us</a></li>
+    </ul>
+    <p>2023 TurfMind. All Rights Reserved.</p>
+</footer>
+  
+  <!-- Your script.js file -->
+  <script src="{% static 'script.js' %}"></script>
+  <script>
+  </script>
+</html>

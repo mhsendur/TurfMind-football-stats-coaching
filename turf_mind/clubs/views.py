@@ -1,4 +1,4 @@
-from rest_framework import views, response, status  # Import status module here
+from rest_framework import views, response, status 
 from turf_mind.firebase import db
 from google.cloud.firestore_v1.base_query import FieldFilter
 from firebase_admin import firestore
@@ -8,10 +8,8 @@ class LeagueTableView(views.APIView):
         try:
             db = firestore.client()
             
-            # Get all documents from the 'clubs' collection
             clubs_query = db.collection(u'clubs').stream()
 
-            # Filter documents by league and season
             league_table = []
             for doc in clubs_query:
                 doc_data = doc.to_dict()
@@ -52,9 +50,7 @@ class ClubDetailView(views.APIView):
                 # Convert the document to dictionary
                 doc_data = doc.to_dict()
 
-                # Calculate any additional metrics
-                # calculate average xG:
-                # doc_data['avg_xG'] = doc_data['total_xG'] / doc_data['matches_played']
+
 
                 return response.Response(doc_data, status=status.HTTP_200_OK)
             else:

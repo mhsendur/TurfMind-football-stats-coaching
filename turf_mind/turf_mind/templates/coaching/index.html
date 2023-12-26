@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <title>Coaching | TurfMind</title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Jomolhari&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="{% url 'home_index' %}">
+                    <img src="{% static 'images/logo.png' %}" alt="TurfMind Logo">
+                    <span class="logo-text">TurfMind</span>
+                </a>
+            </div>
+          <ul>
+            <li><a href="{% url 'home_index' %}">Home</a></li>
+            <li class="dropdown">
+                <a href="#">Leagues</a>
+                <div class="dropdown-content">
+                    <a href="{% url 'league-page' 'EPL' '2022' %}">EPL</a>
+                    <a href="{% url 'league-page' 'La_liga' '2022' %}">La Liga</a>
+                    <a href="{% url 'league-page' 'Bundesliga' '2022' %}">Bundesliga</a>
+                    <a href="{% url 'league-page' 'Serie_A' '2022' %}">Serie A</a>
+                    <a href="{% url 'league-page' 'Ligue_1' '2022' %}">Ligue 1</a>
+                </div>
+            </li>
+            <li><a href="#">Players</a></li>
+            <li><a href="{% url 'coaching' %}">Coaching</a></li>
+            <li><a href="{% url 'about_us' %}">About Us</a></li>
+        </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <section class="coaching-introduction">
+            <h1>Introduction to Coaching</h1>
+            <p>Welcome to our Coaching section, where we aim to empower aspiring football coaches with the knowledge and resources needed to excel in their roles. Whether you are a budding coach or an experienced mentor, this page offers insights and tools to enhance your coaching journey.</p>
+        </section>
+        
+        <section class="coaching-philosophy">
+            <h2>Coaching Philosophy</h2>
+            <p>At TurfMind, we believe that effective coaching begins with a well-defined coaching philosophy. Your coaching philosophy encompasses your values, principles, and objectives as a coach. It guides your decision-making and approach to player development. Explore our resources to help you formulate your coaching philosophy.</p>
+        </section>
+        
+        <section class="training-development">
+            <h2>Training and Development</h2>
+            <p>Coaches play a pivotal role in nurturing the talents of football players. Our Training and Development resources provide guidance on designing effective training sessions, improving players' skills, and ensuring their physical and mental well-being. Learn how to create structured training plans and drills that lead to player growth and success.</p>
+            <ol>
+                <li>
+                    <strong>United Soccer Coaches (USA):</strong>
+                    <ul>
+                        <li><a href="https://unitedsoccercoaches.org/education/">United Soccer Coaches Courses</a></li>
+                        <li>Offers a variety of coaching courses and resources, including sessions on training and development.</li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>Coaching Manual - The FA (England):</strong>
+                    <ul>
+                        <li><a href="https://learn.englandfootball.com/sessions">The FA Coaching Resources</a></li>
+                        <li>The FA provides coaching manuals and resources for different age groups and levels.</li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>UEFA Training Centre Manual:</strong>
+                    <ul>
+                        <li><a href="https://editorial.uefa.com/resources/0266-11a36a9c4504-5bfeaf9c366f-1000/uefa_training_centre_final_en.pdf">UEFA Training Ground - Sessions</a></li>
+                        <li>Provides a manual on training sessions, sustainability designed by UEFA.</li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>SoccerXpert:</strong>
+                    <ul>
+                        <li><a href="https://www.soccerxpert.com/">SoccerXpert - Drills and Exercises</a></li>
+                        <li>Offers a wide range of drills, exercises, and coaching tips for training sessions.</li>
+                    </ul>
+                </li>
+            </ol>
+            
+        </section>
+        
+        <section class="player-responsibility">
+            <h2>Player Responsibility</h2>
+            <p>Understanding player responsibility is essential for fostering a winning team culture. Learn how to instill discipline, commitment, and teamwork in your players. Explore strategies to help players take ownership of their roles on and off the field. Here are resources that will help you cultivate responsible athletes.</p>
+            <ol>
+                <li>
+                    <strong>The Coaches' Voice - Player Interviews:</strong>
+                    <ul>
+                        <li><a href="https://www.coachesvoice.com/cv/playercare/">The Coaches' Voice - Player Interviews</a></li>
+                        <li>Features interviews with professional players discussing their roles and responsibilities.</li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>Soccer Coaching Pro - Soccer Position Responsibilities:</strong>
+                    <ul>
+                        <li><a href="https://www.soccercoachingpro.com/soccer-positions/">Soccer Coaching Pro - Soccer Position Responsibilities</a></li>
+                        <li>Offers information on player responsibilities by position.</li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>SoccerNovo - Soccer Positions:</strong>
+                    <ul>
+                        <li><a href="https://soccernovo.com/soccer-positions/">SoccerNovo - Soccer Positions</a></li>
+                        <li>Presents resources football positions used in the game.</li>
+                    </ul>
+                </li>
+            </ol>
+        </section>
+        
+        <section class="game-strategy">
+            <h2>Game Strategy Development</h2>
+            <p>Understand the intricacies of game strategy development with our offered comprehensive resources. Dive into the world of tactical analysis, formations, and match preparation. Discover how to create game plans tailored to your team's strengths and weaknesses. Elevate your coaching skills and lead your team to victory.</p>
+            <ol>
+                <li>
+                    <strong>Premier League - England:</strong>
+                    <ul>
+                        <li><a href="https://www.premierleague.com/news/1524502">Premier League Tactics</a></li>
+                        <li>Premier League provides articles and analysis on football strategies and tactics used in the league.</li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>Guide to Football:</strong>
+                    <ul>
+                        <li><a href="https://www.guidetofootball.com/tactics/">Tactical Theory</a></li>
+                        <li>Provides tactical theory knowledge and information on tactical objective.</li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>TFA - Total Football Analysis:</strong>
+                    <ul>
+                        <li><a href="https://totalfootballanalysis.com/opinion/tactics-101-a-guide-to-the-three-most-popular-tactics-employed">Tactics 101</a></li>
+                        <li>Offers information regarding tactical formations and their strengths & weaknesses.</li>
+                    </ul>
+                </li>
+            </ol>
+        </section>
+        
+        <section class="further-resources">
+            <h2>Further Resources</h2>
+            <p>Official and Professional Resources (Europe and UK):</p>
+            <ol>
+                <li>
+                    <strong>The Football Association (The FA) - England:</strong>
+                    <ul>
+                        <li><a href="https://www.thefa.com/get-involved/coach">The FA Learning</a></li>
+                        <li>The FA offers a wide range of coaching courses and resources for coaches in England.</li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>UEFA Pro Licence Programs:</strong>
+                    <ul>
+                        <li><a href="https://www.uefa.com/insideuefa/news/0268-11f1908f8de9-9feac6d280b8-1000--course-details-the-uefa-pro-diploma/">Explore UEFA Pro Licence programs</a></li>
+                        <li>offered in various European countries, including England, Spain, and Italy.</li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>The Coaches' Voice - Europe:</strong>
+                    <ul>
+                        <li><a href="https://learn.englandfootball.com/">The Coaches' Voice - Europe</a></li>
+                        <li>A platform featuring insights and interviews with top football coaches in Europe.</li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>UK Coaching - Football:</strong>
+                    <ul>
+                        <li><a href="https://www.ukcoaching.org/courses">UK Coaching - Football</a></li>
+                        <li>UK Coaching offers various coaching resources.</li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>Coaching Association of France (FFF) - France:</strong>
+                    <ul>
+                        <li><a href="https://www.fff.fr/">FFF Coaching Courses</a></li>
+                        <li>Provides coaching courses endorsed by the French Football Federation.</li>
+                    </ul>
+                </li>
+            </ol>
+        </section>
+        
+    </main>
+    
+
+    <footer>
+        <ul>
+            <li><a href="{% url 'home_index' %}">Home</a></li>
+            <!-- Dropdown for Leagues in the footer -->
+            <li class="dropdown">
+                <a href="javascript:void(0)">Leagues</a>
+                <div class="dropdown-content">
+                    <a href="{% url 'league-page' 'EPL' '2022' %}">EPL</a>
+                    <a href="{% url 'league-page' 'La_liga' '2022' %}">La Liga</a>
+                    <a href="{% url 'league-page' 'Bundesliga' '2022' %}">Bundesliga</a>
+                    <a href="{% url 'league-page' 'Serie_A' '2022' %}">Serie A</a>
+                    <a href="{% url 'league-page' 'Ligue_1' '2022' %}">Ligue 1</a>
+                </div>
+            </li>
+            <li><a href="#">Players</a></li>
+            <li><a href="{% url 'coaching' %}">Coaching</a></li>
+            <li><a href="{% url 'about_us' %}">About Us</a></li>
+        </ul>
+        <p>2023 TurfMind. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>
+<script type="text/javascript">
+    document.addEventListener('DOMContentLoaded', function() {
+        // Get the current URL path
+        var path = window.location.pathname;
+
+        // Select all nav links
+        var navLinks = document.querySelectorAll('nav ul li a, footer ul li a');
+
+        // Loop through each nav link
+        navLinks.forEach(function(link) {
+            // Check if the href of the link matches the current path
+            if (link.getAttribute('href') === path) {
+                // Add the active class
+                link.classList.add('active-link');
+            } else {
+                // Remove the active class if it's not the current page
+                link.classList.remove('active-link');
+            }
+        });
+    });
+</script>

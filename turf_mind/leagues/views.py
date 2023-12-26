@@ -1,33 +1,45 @@
-from django.shortcuts import render, get_object_or_404
-from .models import Club
+from django.shortcuts import render
+from rest_framework import views, response, status  
+from turf_mind.firebase import db
+from google.cloud.firestore_v1.base_query import FieldFilter
+from firebase_admin import firestore
 
-def calculate_league_table(clubs):
+class LeagueTableView(views.APIView):
+    def get(self, request, league_name, season):
+        try:
+            db = firestore.client()
+            
+            # Get all documents from the 'clubs' collection
+            clubs_query = db.collection(u'clubs').stream()
 
-    sorted_clubs = sorted(clubs, key=lambda x: (-x.points, x.goals_scored))
+            # Filter documents by league and season
+            league_table = []
+            for doc in clubs_query:
+                doc_data = doc.to_dict()
+                doc_id = doc.id 
+                if doc_id.startswith(f"{league_name}_{season}_"):
+                    league_table.append(doc_data)
 
-    position = 1
-    league_table = []
-    for club in sorted_clubs:
-        club.position = position
-        league_table.append(club)
-        position += 1
+            # If league_table is empty, send a not found response
+            if not league_table:
+                return response.Response(
+                    {"error": f"No data found for league: {league_name}, season: {season}"},
+                    status=status.HTTP_404_NOT_FOUND
+                )
 
-    return league_table
+            # Otherwise, return the league table data
+            return response.Response(league_table, status=status.HTTP_200_OK)
 
-def league_view(request, season=None):
-    # Fetch clubs from the database
-    clubs = Club.objects.all()
+        except Exception as e:
+            # Handle any other exceptions that occur
+            return response.Response(
+                {"error": str(e)},
+                status=status.HTTP_500_INTERNAL_SERVER_ERROR
+            )
 
-    if season:
-        # Filter clubs by the selected season
-        clubs = clubs.filter(season=season)
-
-    league_table = calculate_league_table(clubs)
-
-    available_seasons = Club.objects.values_list('season', flat=True).distinct()
-
-    return render(request, 'leagues/league_template.html', {
-        'league_table': league_table,
-        'available_seasons': available_seasons,
-        'selected_season': season,
-    })
+def league_page(request, league_name, season):
+    context = {
+        'league_name': league_name,
+        'season': season,
+    }
+    return render(request, 'leagues/index.html', context)

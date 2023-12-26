@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <title>Leagues | TurfMind</title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Jomolhari&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <nav>
+        <div class="logo">
+            <a href="{% url 'home_index' %}">
+                <img src="{% static 'images/logo.png' %}" alt="TurfMind Logo">
+                <span class="logo-text">TurfMind</span>
+            </a>
+        </div>
+      <ul>
+        <li><a href="{% url 'home_index' %}">Home</a></li>
+        <li class="dropdown">
+            <a href="#">Leagues</a>
+            <div class="dropdown-content">
+                <a href="{% url 'league-page' 'EPL' '2022' %}">EPL</a>
+                <a href="{% url 'league-page' 'La_liga' '2022' %}">La Liga</a>
+                <a href="{% url 'league-page' 'Bundesliga' '2022' %}">Bundesliga</a>
+                <a href="{% url 'league-page' 'Serie_A' '2022' %}">Serie A</a>
+                <a href="{% url 'league-page' 'Ligue_1' '2022' %}">Ligue 1</a>
+            </div>
+        </li>
+        <li><a href="#">Players</a></li>
+        <li><a href="{% url 'coaching' %}">Coaching</a></li>
+        <li><a href="{% url 'about_us' %}">About Us</a></li>
+    </ul>
+    </nav>
+</header>
+    <main>
+<!-- League Header Section -->
+<div class="league-header">
+  <!-- League Logo -->
+  <div class="league-logo">
+      <img id="league-logo" src="{% static 'images/league_logos/laliga-logo.png' %}" alt="La Liga Logo" />
+  </div>
+  
+  <!-- League Name and Season Select -->
+  <div class="league-info">
+      <h1 id="league-name">La Liga</h1>
+      <div class="season-select-container">
+          <label for="season-select">Season:</label>
+          <select id="season-select" name="season">
+              <!-- Options be populated by script.js -->
+          </select>
+      </div>
+  </div>
+</div>
+
+    </div>
+        <!-- Dynamic League Table -->
+        <table id="league-table">
+            <thead>
+                <tr>
+                    <th>Position</th>
+                    <th>Club</th>
+                    <th>Total xG</th>
+                    <th>Total xPTS</th>
+                    <th>Scored</th>
+                    <th>Wins</th>
+                    <th>Draws</th>
+                    <th>Loses</th>
+                    <th>Points</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Table rows populated by script.js -->
+            </tbody>
+        </table>
+
+        <section id="metrics-definition">
+          <h2>Definition of Metrics</h2>
+          <p>
+              <strong>1. Total xG (Total Expected Goals):</strong><br>
+              Total xG is a metric that represents the sum of the expected goals (xG) for a team or player over a specified period, such as a season. Expected goals are calculated based on various factors, including the location of shots, the angle from which they are taken, and other relevant data. It provides an estimate of the number of goals a team or player is expected to score based on the quality of their scoring opportunities.
+          </p>
+          <p>
+              <strong>2. Total xPTS (Total Expected Points):</strong><br>
+              Total xPTS is a metric that represents the sum of the expected points (xPTS) for a team over a specified period, such as a season. Expected points are calculated based on the expected results of matches, taking into account the quality of scoring opportunities and other factors. It provides an estimate of the number of points a team is expected to earn based on their performance in individual matches.
+          </p>
+          <p>
+              <strong>3. Scored (Goals Scored):</strong><br>
+              Goals Scored, often simply referred to as "scored," is a metric that counts the total number of goals a team or player has scored in a given period, such as a season or a series of matches. It reflects the actual number of goals that have been successfully scored by the team or player during competitive matches.
+          </p>
+      </section>
+
+        <section id="league-visualised">
+            <!-- League Visualised Content -->
+            <h2>League Visualised</h2>
+            <p>
+                Here in this section, we have visualised the league's performance over this season using practical features as valuable metrics to offer better understanding of the trends in the game. Hover your cursor over to see exact the values in our dynamic & interactive charts.
+            </p>
+            <!-- Placeholders for dynamic charts -->
+            <div id="chart-container-1">
+              <canvas id="xg-chart"></canvas> <!-- Chart.js requires a canvas element -->
+            </div>
+            <p>
+              Above we can examine the xG chart of the season and each of the team's performances in the league over the metric. Below, analyse the performance of clubs in the league over xPTS metric. Compare the performance of clubs in these metrics, investigate the rivalries & significant differences between the clubs' statistics.
+          </p>
+            <div id="chart-container-2">
+              <canvas id="xpts-chart"></canvas> 
+            </div>
+            <!-- Charts will be populated by script.js using Chart.js -->
+        </section>
+    </main>
+
+    <footer>
+      <ul>
+          <li><a href="{% url 'home_index' %}">Home</a></li>
+          <!-- Dropdown for Leagues in the footer -->
+          <li class="dropdown">
+              <a href="javascript:void(0)">Leagues</a>
+              <div class="dropdown-content">
+                  <a href="{% url 'league-page' 'EPL' '2022' %}">EPL</a>
+                  <a href="{% url 'league-page' 'La_liga' '2022' %}">La Liga</a>
+                  <a href="{% url 'league-page' 'Bundesliga' '2022' %}">Bundesliga</a>
+                  <a href="{% url 'league-page' 'Serie_A' '2022' %}">Serie A</a>
+                  <a href="{% url 'league-page' 'Ligue_1' '2022' %}">Ligue 1</a>
+              </div>
+          </li>
+          <li><a href="#">Players</a></li>
+          <li><a href="{% url 'coaching' %}">Coaching</a></li>
+          <li><a href="{% url 'about_us' %}">About Us</a></li>
+      </ul>
+      <p>2023 TurfMind. All Rights Reserved.</p>
+  </footer>
+  
+</body>
+<!-- Include Chart.js library -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<!-- Your script.js file -->
+<script src="{% static 'script.js' %}"></script>
+<script type="text/javascript">
+  // Define the paths for the league logos in a script tag within your HTML
+  const leagueLogoPaths = {
+    'epl': "{% static 'images/league_logos/epl-logo.png' %}",
+    'bundesliga': "{% static 'images/league_logos/bundesliga-logo.png' %}",
+    'laliga': "{% static 'images/league_logos/laliga-logo.png' %}",
+    'ligue1': "{% static 'images/league_logos/ligue-1-logo.png' %}",
+    'seriea': "{% static 'images/league_logos/serie-a-logo.png' %}"
+  };
+</script>
+
+</html>

@@ -1,0 +1,119 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    {% load static %}
+    <title>Home | TurfMind</title>
+    <link rel="stylesheet" href="./static/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Jomolhari&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="{% url 'home_index' %}">
+                    <img src="{% static 'images/logo.png' %}" alt="TurfMind Logo">
+                    <span class="logo-text">TurfMind</span>
+                </a>
+            </div>
+          <ul>
+            <li><a href="{% url 'home_index' %}">Home</a></li>
+            <li class="dropdown">
+                <a href="#">Leagues</a>
+                <div class="dropdown-content">
+                    <a href="{% url 'league-page' 'EPL' '2022' %}">EPL</a>
+                    <a href="{% url 'league-page' 'La_liga' '2022' %}">La Liga</a>
+                    <a href="{% url 'league-page' 'Bundesliga' '2022' %}">Bundesliga</a>
+                    <a href="{% url 'league-page' 'Serie_A' '2022' %}">Serie A</a>
+                    <a href="{% url 'league-page' 'Ligue_1' '2022' %}">Ligue 1</a>
+                </div>
+            </li>
+            <li><a href="#">Players</a></li>
+            <li><a href="{% url 'coaching' %}">Coaching</a></li>
+            <li><a href="{% url 'about_us' %}">About Us</a></li>
+        </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <section class="welcome">
+            <h1>Welcome</h1>
+            <p>Welcome to TurfMind, where football analytics meets coaching insights. Explore the beautiful game like never before as we merge cutting-edge data analytics with the art of coaching. Whether you're a football enthusiast looking to dive deeper into the numbers behind the game, an aspiring coach seeking valuable insights, or a seasoned pro searching for innovative strategies. Access the power of data-driven decision-making, discover hidden trends, and elevate your football knowledge.</p>
+        </section>
+        
+        <section class="our-aim">
+            <h2>Our Aim</h2>
+            <p>Our aim at TurfMind is to merge football analytics and coaching expertise, making them accessible to everyone. We believe that the synergy between data-driven insights and coaching wisdom can transform the way football is understood, taught, and played. Our platform is designed to empower football enthusiasts, coaches, and players alike, offering a comprehensive range of features, from in-depth player statistics to tactical recommendations and educational content. We aim to bridge the gap between raw football data and actionable coaching insights, fostering a deeper appreciation of the game's intricacies.</p>
+        </section>
+        
+        <section class="league-comparison">
+            <h2>League Comparison</h2>
+            <p>At TurfMind, we have analyzed Europe’s top 5 leagues; English Premier League, La Liga, Bundesliga, Serie A, and Ligue 1. For each league, we present data from 2014 until 2023. We will be relying on annual historical data to offer deep examination on the overall trends in the game for every year.</p>
+            <!--  the image of data visualisation called data_vis1.png here -->
+            <img src="{% static 'images/data_vis1.png' %}" alt="League Comparison Image 1">
+            <p>The radar chart above illustrates a comparative analysis of performance metrics for Europe's top five football leagues in the 2022-2023 season.</p>
+            <p>From the data, we observe that EPL leads in the category of 'Goals Scored', indicating a highly offensive playstyle. Also, EPL shows a greater number of 'Expected Goals', suggesting they create the most scoring opportunities. In terms of 'Points' accumulated, EPL again is in the lead, potentially due to their consistent match-winning performances.</p>
+            <p>This visual representation aids in the easy comparison of the leagues across multiple facets of gameplay, showcasing their unique characteristics and providing a comprehensive overview of their performance. The overlaid triangles reveal how closely matched the leagues are, with areas of overlap indicating similar levels of performance in specific metrics. Such data is invaluable for deeper strategic analysis and fostering competitive improvement.</p>
+            <!--  the images of data visualisations called data_vis2.png and data_vis3.png here (next to each other) -->
+            <div class="image-container">
+            <img src="{% static 'images/data_vis2.png' %}" alt="League Comparison Image 2">
+            <img src="{% static 'images/data_vis3.png' %}" alt="League Comparison Image 3">
+            </div>
+            <p>The visual at the left-hand side demonstrates how tightly close the total point accumulation of the leagues are, especially between EPL and La Liga. On the left-hand side we have highlighted each league’s performance on total amount of goal scoring and expected goal scoring. Through observation, it is important to highlight how close Bundesliga and Serie A are on these metrics for the 2022-2023 season.</p>
+            <p>Lastly Ligue 1, producing the lowest amount of total points out of the five, and also being ranked third on “Total Expected Goals” demonstrates how competitive the French league is for the clubs participating.</p>
+            <!--  the image of data visualisation called data_vis4.png here -->
+            <img src="{% static 'images/data_vis4.png' %}" alt="League Comparison Image 4">
+            <p>Through this scatter plot, we can examine the top 5 league’s performances on Total Non-Penalty Expected Goals, Total Goals Allowed, Total Expected Goals, and Total Goals Scored. It is evident to see the over-dominance of the English Premier League when we are analyzing goal contribution aspect of the game. Bundesliga is performing below the average when we are examining “finishing”; one of the crucial parts of football.</p>
+        </section>
+        
+        <!-- Additional analysis content and images  -->
+    </main>
+
+    <footer>
+        <ul>
+            <li><a href="{% url 'home_index' %}">Home</a></li>
+            <!-- Dropdown for Leagues in the footer -->
+            <li class="dropdown">
+                <a href="javascript:void(0)">Leagues</a>
+                <div class="dropdown-content">
+                    <a href="{% url 'league-page' 'EPL' '2022' %}">EPL</a>
+                    <a href="{% url 'league-page' 'La_liga' '2022' %}">La Liga</a>
+                    <a href="{% url 'league-page' 'Bundesliga' '2022' %}">Bundesliga</a>
+                    <a href="{% url 'league-page' 'Serie_A' '2022' %}">Serie A</a>
+                    <a href="{% url 'league-page' 'Ligue_1' '2022' %}">Ligue 1</a>
+                </div>
+            </li>
+            <li><a href="#">Players</a></li>
+            <li><a href="{% url 'coaching' %}">Coaching</a></li>
+            <li><a href="{% url 'about_us' %}">About Us</a></li>
+        </ul>
+        <p>2023 TurfMind. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>
+<script type="text/javascript">
+    document.addEventListener('DOMContentLoaded', function() {
+        // Get the current URL path
+        var path = window.location.pathname;
+
+        // Select all nav links
+        var navLinks = document.querySelectorAll('nav ul li a, footer ul li a');
+
+        // Loop through each nav link
+        navLinks.forEach(function(link) {
+            // Check if the href of the link matches the current path
+            if (link.getAttribute('href') === path) {
+                // Add the active class
+                link.classList.add('active-link');
+            } else {
+                // Remove the active class if it's not the current page
+                link.classList.remove('active-link');
+            }
+        });
+    });
+</script>

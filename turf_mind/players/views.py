@@ -1,6 +1,7 @@
 
 from rest_framework import views, response
 from turf_mind.firebase import db
+from django.shortcuts import render
 
 class PlayerStatsView(views.APIView):
     def get(self, request, league_name, season, team=None):
@@ -19,3 +20,12 @@ class PlayerStatsView(views.APIView):
                         player_stats.append(player)
 
         return response.Response(player_stats)
+    
+    
+def player_page(request, league_name, season, team=None):
+    context = {
+        'league_name': league_name,
+        'season': season,
+        'team': team,
+    }
+    return render(request, 'players/index.html', context)

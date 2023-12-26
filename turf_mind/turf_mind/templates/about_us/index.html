@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About TurfMind | TurfMind</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Jomolhari&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="{% url 'home_index' %}">
+                    <img src="{% static 'images/logo.png' %}" alt="TurfMind Logo">
+                    <span class="logo-text">TurfMind</span>
+                </a>
+            </div>
+          <ul>
+            <li><a href="{% url 'home_index' %}">Home</a></li>
+            <li class="dropdown">
+                <a href="#">Leagues</a>
+                <div class="dropdown-content">
+                    <a href="{% url 'league-page' 'EPL' '2022' %}">EPL</a>
+                    <a href="{% url 'league-page' 'La_liga' '2022' %}">La Liga</a>
+                    <a href="{% url 'league-page' 'Bundesliga' '2022' %}">Bundesliga</a>
+                    <a href="{% url 'league-page' 'Serie_A' '2022' %}">Serie A</a>
+                    <a href="{% url 'league-page' 'Ligue_1' '2022' %}">Ligue 1</a>
+                </div>
+            </li>
+            <li><a href="#">Players</a></li>
+            <li><a href="{% url 'coaching' %}">Coaching</a></li>
+            <li><a href="{% url 'about_us' %}">About Us</a></li>
+        </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <section class="about">
+            <h1>About TurfMind</h1>
+            <p>
+                At TurfMind, we are passionate about the beautiful game of football — a sport that captivates hearts and ignites spirits across the globe. Our platform stands at the intersection of technology and tradition, where the time-honored practices of coaching meet the transformative power of data analytics. TurfMind is dedicated to refining the art of football by leveraging statistical insights to enhance strategic understanding and player development.
+            </p>
+            <p>
+                The genesis of TurfMind was inspired by the evolution of football — a game that has blossomed from its humble beginnings into the world's most popular sport, and one that continues to innovate through the integration of data analytics. We recognise the gap between the accessibility of raw metrics and the utilisation of this data for tangible, on-field application. It's this chasm that TurfMind seeks to bridge, offering a platform that translates complex data into comprehensible and actionable coaching insights.
+            </p>
+            <p>
+                By analysing the top European leagues, including the English Premier League, La Liga, Bundesliga, Serie A, and Ligue 1, TurfMind provides an in-depth examination of player performances, club statistics, and league trends from 2014 to the present. Our goal is to offer a holistic view of football that combines raw data with insightful analysis, leading to informed decision-making for coaches, players, and fans alike.
+            </p>
+        </section>
+        
+        <section class="mission">
+            <h2>Our Mission</h2>
+            <p>
+                The mission of TurfMind is to create an all-encompassing platform that not only presents football data analytics but also integrates coaching insights to empower football enthusiasts and aspiring coaches. By facilitating a space where one can learn, discuss, and interpret football from a data-driven perspective, we aim to clarify complex metrics and provide actionable insights for game strategies and player performance enhancement.
+            </p>
+            <p>
+                TurfMind's commitment to this mission is unwavering, as we continue to develop and refine features that support this goal. Our platform offers comprehensive historical data analysis, visualisation tools, and educational modules that simplify the complexities of football metrics. We are dedicated to providing tactical recommendations based on data insights, translating analytics into practical drills, and creating game plans that can be implemented on the pitch.
+            </p>
+        </section>
+        
+        <section class="values">
+            <h2>Our Values</h2>
+            <p>
+                TurfMind is built upon a foundation of core values that guide every aspect of our platform. Innovation is the driving force behind our pursuit to push the boundaries of football analytics and coaching methods. We are committed to making our platform accessible to a diverse audience, removing barriers to entry for those seeking a deeper understanding of football statistics.
+            </p>
+            <p>
+                Education is at the heart of what we do, as we believe in empowering our users with knowledge that transcends the traditional approach to football. Our platform fosters a sense of community, a place for like-minded individuals to connect, share ideas, and collaborate on strategies that enhance the game we all love.
+            </p>
+            <p>
+                TurfMind's unique selling proposition is our 360-degree approach to football understanding. We do not just serve data; we contextualise it, offering insights that are actionable and relevant to both enthusiasts and professional coaches. We are proud to stand as a beacon for those seeking to refine their strategies, elevate player development, and embrace a data-driven approach to coaching.
+            </p>
+        </section>
+        
+        <section class="contact">
+            <h2>Contact Us</h2>
+            <p>
+                Your journey into the analytical depths of football begins with TurfMind. We invite you to engage with our platform, explore its features, and join our community. For inquiries, support, or collaboration, reach out to us at <a href="mailto:turfmindcontact@gmail.com">turfmindcontact@gmail.com</a>. Together, let's revolutionise the way football is perceived, discussed, and coached.
+            </p>
+        </section>
+    </main>
+    
+
+    <footer>
+        <ul>
+            <li><a href="{% url 'home_index' %}">Home</a></li>
+            <!-- Dropdown for Leagues in the footer -->
+            <li class="dropdown">
+                <a href="javascript:void(0)">Leagues</a>
+                <div class="dropdown-content">
+                    <a href="{% url 'league-page' 'EPL' '2022' %}">EPL</a>
+                    <a href="{% url 'league-page' 'La_liga' '2022' %}">La Liga</a>
+                    <a href="{% url 'league-page' 'Bundesliga' '2022' %}">Bundesliga</a>
+                    <a href="{% url 'league-page' 'Serie_A' '2022' %}">Serie A</a>
+                    <a href="{% url 'league-page' 'Ligue_1' '2022' %}">Ligue 1</a>
+                </div>
+            </li>
+            <li><a href="#">Players</a></li>
+            <li><a href="{% url 'coaching' %}">Coaching</a></li>
+            <li><a href="{% url 'about_us' %}">About Us</a></li>
+        </ul>
+        <p>2023 TurfMind. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>
+<script type="text/javascript">
+    document.addEventListener('DOMContentLoaded', function() {
+        // Get the current URL path
+        var path = window.location.pathname;
+
+        // Select all nav links
+        var navLinks = document.querySelectorAll('nav ul li a, footer ul li a');
+
+        // Loop through each nav link
+        navLinks.forEach(function(link) {
+            // Check if the href of the link matches the current path
+            if (link.getAttribute('href') === path) {
+                // Add the active class
+                link.classList.add('active-link');
+            } else {
+                // Remove the active class if it's not the current page
+                link.classList.remove('active-link');
+            }
+        });
+    });
+</script>
