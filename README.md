@@ -17,3 +17,4 @@ All-in-one platform for exploring football analytics, gaining coaching insights,
 
 - **Educational Content**: Simplify complex football metrics with our educational content. You can learn how to apply analytics to real-world scenarios and improve your coaching or analysis skills.
 
+For inquiries, support, or collaboration, reach out to us at turfmindcontact@gmail.com.
