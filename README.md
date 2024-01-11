@@ -19,4 +19,13 @@ All-in-one platform for exploring football analytics, gaining coaching insights,
 
 For inquiries, support, or collaboration, reach out to us at turfmindcontact@gmail.com.
 
+## TurfMind's Home Web Page
+
+
 <img width="1728" alt="Screenshot 2024-01-11 at 19 05 40" src="https://github.com/mhsendur/TurfMind-football-stats-coaching/assets/120842010/d24fe90c-438c-400f-af0d-141b785c22b1">
+
+## TurfMind's League Web Page
+
+Here you can see dynamic content that is presented based on the user's selection of league and season. Dynamically updated tables and interactive charts using different metrics are offered here in this web page.
+
+<img width="3008" alt="Screenshot 2024-01-11 at 19 16 09" src="https://github.com/mhsendur/TurfMind-football-stats-coaching/assets/120842010/d82304ea-2a53-46f2-a077-d172f4757ce9">
