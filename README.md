@@ -45,9 +45,10 @@ Here analyse player and club-related data from 2014 to the present using numerou
 
 ## TurfMind's Coaching Web Page
 
-Here official,l coaching-related resources are offered to the user, providing professional organisations on the web page.
+Here official, coaching-related resources are offered to the user, providing professional organisations on the web page.
 
 <img width="3008" alt="Screenshot 2024-01-11 at 19 21 54" src="https://github.com/mhsendur/TurfMind-football-stats-coaching/assets/120842010/ca00e6d0-89f3-4cf6-a682-b9df6d92af2b">
 
+## View our web platform to see more.
 
 More content can be viewed on the web platform such as dynamic/static data visualisations, coaching insights encapsulating data analytics, and many more useful integration of football statistics with football coaching.
