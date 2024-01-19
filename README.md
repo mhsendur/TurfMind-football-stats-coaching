@@ -1,6 +1,6 @@
 # TurfMind
 
-The platform can be accessed here: https://turf-mind-app-cff8da281c12.herokuapp.com/
+The platform can be accessed here: https://www.turfmind.com
 
 Data-driven web platform merging football analytics with coaching insights
 
@@ -52,3 +52,5 @@ Here official, coaching-related resources are offered to the user, providing pro
 ## View our web platform to see more.
 
 More content can be viewed on the web platform such as dynamic/static data visualisations, coaching insights encapsulating data analytics, and many more useful integration of football statistics with football coaching.
+The platform can be accessed here: https://www.turfmind.com
+
